@@ -34,6 +34,8 @@
             this.txtMaCL = new System.Windows.Forms.TextBox();
             this.txtTenCL = new System.Windows.Forms.TextBox();
             this.gridviewCL = new System.Windows.Forms.DataGridView();
+            this.MaCL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenCL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -88,6 +90,9 @@
             // gridviewCL
             // 
             this.gridviewCL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridviewCL.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaCL,
+            this.TenCL});
             this.gridviewCL.Location = new System.Drawing.Point(60, 188);
             this.gridviewCL.Name = "gridviewCL";
             this.gridviewCL.RowTemplate.Height = 24;
@@ -95,6 +100,18 @@
             this.gridviewCL.TabIndex = 5;
             this.gridviewCL.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewCL_CellClick);
             this.gridviewCL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewCL_CellContentClick);
+            // 
+            // MaCL
+            // 
+            this.MaCL.DataPropertyName = "Machatlieu";
+            this.MaCL.HeaderText = "Ma chat lieu";
+            this.MaCL.Name = "MaCL";
+            // 
+            // TenCL
+            // 
+            this.TenCL.DataPropertyName = "Tenchatlieu";
+            this.TenCL.HeaderText = "Ten chat lieu";
+            this.TenCL.Name = "TenCL";
             // 
             // btnLuu
             // 
@@ -104,6 +121,7 @@
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThem
             // 
@@ -143,6 +161,7 @@
             this.btnDong.TabIndex = 10;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // FrmChatlieu
             // 
@@ -182,5 +201,7 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenCL;
     }
 }

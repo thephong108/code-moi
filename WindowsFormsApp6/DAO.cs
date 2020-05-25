@@ -7,6 +7,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Forms;
+using System.Data;
 
 namespace WindowsFormsApp6
 {
@@ -47,6 +48,17 @@ namespace WindowsFormsApp6
                     MessageBox.Show(ex.ToString());
                 }
 
+        }
+        public static bool checkKeyexit(string sql)
+        {
+            bool kq = false;
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+                kq = true;
+
+            return kq;
         }
     }
 }

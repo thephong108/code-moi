@@ -33,7 +33,7 @@ namespace WindowsFormsApp6
                 MessageBox.Show(ex.ToString());
             }
        
-            Application.Run(new FrmChatlieu());
+            Application.Run(new frmMain());
         }
     }
 }

@@ -54,8 +54,8 @@ namespace WindowsFormsApp6
 
         private void gridviewCL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTenCL.Text = gridviewCL.CurrentRow.Cells["Tenchatlieu"].Value.ToString();
-            txtMaCL.Text = gridviewCL.CurrentRow.Cells["Machatlieu"].Value.ToString();
+            txtTenCL.Text = gridviewCL.CurrentRow.Cells["TenCL"].Value.ToString();
+            txtMaCL.Text = gridviewCL.CurrentRow.Cells["MaCL"].Value.ToString();
             txtMaCL.Enabled = false;
         }
 
@@ -73,7 +73,7 @@ namespace WindowsFormsApp6
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sql = "delete from tblChatlieu where Machatlieu = '" + txtMaCL.Text + "'";
+            string sql = "delete from tblChatlieu where Machatlieu = '"+ txtMaCL.Text + "'";
             DAO.OpenConnection();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
@@ -87,6 +87,52 @@ namespace WindowsFormsApp6
         {
             txtMaCL.Enabled = true;
             txtTenCL.Enabled = true;
+            //xoa du lieu trong text box
+            txtMaCL.Text = "";
+            txtTenCL.Text = "";
+
         }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            //kiem tra dieu kien
+            if(txtMaCL.Text == "")
+            {
+                MessageBox.Show(" ban chua nhap ma cl");
+                txtMaCL.Focus();
+                return;
+            }
+            if(txtTenCL.Text =="")
+            {
+                MessageBox.Show("ban chua nhap ten chat lieu");
+                txtTenCL.Focus();
+                return;
+            }
+            string sqlCheckkey = "Select * from tblChatlieu where machatlieu = '" + txtMaCL.Text.Trim() + "'";
+            DAO.OpenConnection();
+            if (DAO.checkKeyexit(sqlCheckkey))
+            {
+                MessageBox.Show("Ma chat lieu da ton tai");
+                DAO.CloseConnection();
+                txtMaCL.Focus();
+                return;
+            }
+            else
+            {
+                string sql = "insert into tblChatlieu values('" + txtMaCL.Text.Trim() + "', N' " + txtTenCL.Text.Trim() + "')";
+
+                SqlCommand cmd = new SqlCommand(sql, DAO.conn);
+                cmd.ExecuteNonQuery();
+                DAO.CloseConnection();
+                LoaddatatoGridview();
+            }
+        }
+
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
     }
 }

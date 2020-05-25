@@ -7,5 +7,6 @@ C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsF
 C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.exe
 C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.pdb
-C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.Form1.resources
 C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.FrmChatlieu.resources
+C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.frmHang.resources
+C:\Users\ADMIN\source\repos\WindowsFormsApp6\WindowsFormsApp6\obj\Debug\WindowsFormsApp6.frmMain.resources
